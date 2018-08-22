@@ -13,6 +13,7 @@ namespace CustomValidation
         {
             var model = new CustomModel();
             model.Text = "abcdefghijklmnopqrstuvwxyz";
+            model.Text2 = "1";
             model.Number = -5;
 
 
@@ -24,6 +25,8 @@ namespace CustomValidation
             //var isValid = Validator.TryValidateObject(model, context, results, true);
 
             var isValid = validator.TryValidate(model, out results);
+
+            var errors = model.Validate(null);
 
             if (!isValid)
             {

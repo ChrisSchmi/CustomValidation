@@ -10,6 +10,9 @@ public class CustomModel : IValidatableObject
     [CustomStringLength(10)]
     public string Text { get; set; }
 
+    [CustomMinLength(2)]
+    public string Text2 { get; set; }
+
     [CustomRange(0,100)]
     public int Number { get; set; }
 
